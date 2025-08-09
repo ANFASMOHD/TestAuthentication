@@ -64,15 +64,15 @@ export default function Result() {
       <Navbar />
       <div className="flex flex-col items-center py-6 px-3 sm:px-6 bg-gray-50 min-h-screen">
         <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg text-center w-full max-w-2xl">
-          {/* Success Icon */}
+      
           <div className="text-green-500 text-4xl sm:text-5xl mb-2">✔</div>
 
-          {/* Title */}
+      
           <h1 className="text-lg sm:text-xl font-bold mb-2">
             Congratulations you have Successfully Completed The Test
           </h1>
 
-          {/* Score */}
+      
           {score !== null && (
             <p className="text-base sm:text-lg font-medium mb-4">
               Score:{" "}
@@ -82,21 +82,21 @@ export default function Result() {
             </p>
           )}
 
-          {/* Enrollment ID */}
+      
           {user?.enrollmentId && (
             <p className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold inline-block mb-4 text-sm sm:text-base">
               Your ID : {user.enrollmentId}
             </p>
           )}
 
-          {/* Feedback Section */}
+      
           <div className="mt-6 text-left">
             <h2 className="text-base sm:text-lg font-semibold mb-2">Feedback</h2>
             <p className="text-xs sm:text-sm text-gray-600 mb-4">
               Give us a feedback! Your input is important for us.
             </p>
 
-            {/* Emoji Picker */}
+          
             <div className="flex flex-wrap justify-between sm:justify-around gap-3 mb-4">
               {emojis.map((e, idx) => (
                 <button
@@ -111,7 +111,7 @@ export default function Result() {
               ))}
             </div>
 
-            {/* Comment Box */}
+       
             <textarea
               placeholder="Add a comment"
               value={comment}
@@ -120,7 +120,7 @@ export default function Result() {
               rows={3}
             ></textarea>
 
-            {/* Submit Button */}
+ 
             <button
               onClick={handleFeedbackSubmit}
               className="w-full sm:w-auto bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm sm:text-base"
@@ -129,7 +129,7 @@ export default function Result() {
             </button>
           </div>
 
-          {/* Back to Home */}
+  
           <button
             onClick={() => navigate("/welcome")}
             className="mt-6 text-gray-600 hover:underline flex items-center justify-center gap-2 text-sm sm:text-base"
