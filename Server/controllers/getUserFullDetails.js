@@ -2,17 +2,17 @@ const User = require("../Modals/User");
 const TestResult = require("../Modals/Test");
 const Feedback = require("../Modals/Feedback");
 
-// Get all students with their test mark and feedback
+// Get all students ++++++++++ test mark and feedback
 const getAllStudentsWithDetails = async (req, res) => {
   try {
-    // Find all users with role 'student'
+    // Find all users with role========= student
   const students = await User.find({ role: "student" }).select("fullName email");
 
-    // For each student get their test result and feedback
+    // For each student ================= test result feedback
     const studentDetails = await Promise.all(
       students.map(async (student) => {
         const testResult = await TestResult.findOne({ userId: student._id }).select("score");
-        // Populate all feedbacks for the student
+        // Populate all feedbacks for =====student
         const feedbacks = await Feedback.find({ userId: student._id }).select("emoji comment createdAt");
         // console.log("**feedback**",feedbacks)
 
@@ -26,7 +26,7 @@ const getAllStudentsWithDetails = async (req, res) => {
     );
  console.log(studentDetails);
  
-    // Format feedbacks for better readability
+    // Format feedbacks better
     const formattedDetails = studentDetails.map(student => ({
       ...student,
       feedbacks: student.feedbacks
@@ -46,5 +46,5 @@ const getAllStudentsWithDetails = async (req, res) => {
 
 module.exports = {
   getAllStudentsWithDetails,
-  // other exports like registerUser, loginUser etc.
+
 };

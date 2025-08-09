@@ -5,19 +5,19 @@ const User = require("../Modals/User");
 
 
 
-// Generate JWT Token
+// Generate  Token
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: "1d",
   });
 };
 
-// 📌 REGISTER USER
+// REGISTER 
 const registerUser = async (req, res) => {
   try {
     const { fullName, email, mobileNumber, password, role } = req.body;
 
-    // Check if email or mobile already exists
+    // email or mobile already exists
     const existingUser = await User.findOne({
       $or: [{ email }, { mobileNumber }],
     });
@@ -59,7 +59,7 @@ const registerUser = async (req, res) => {
   }
 };
 
-// 📌 LOGIN USER
+
 const loginUser = async (req, res) => {
   const { mobileNumber, password } = req.body;
   try {
@@ -77,7 +77,7 @@ const loginUser = async (req, res) => {
   }
 };
 
-// 📌 GET LOGGED-IN USER
+// get user---
 const getMe = async (req, res) => {
   try {
     const user = await User.findById(req.user).select("-password");
