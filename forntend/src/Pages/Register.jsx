@@ -44,13 +44,13 @@ export default function Register() {
         onSubmit={handleSubmit(onSubmit)}
         className="bg-white shadow-md rounded-lg p-8 w-full max-w-sm"
       >
-        {/* Title */}
+       
         <h2 className="text-center text-2xl font-bold mb-6">
           Register
           <span className="block w-16 h-1 bg-yellow-500 mx-auto mt-1 rounded"></span>
         </h2>
 
-        {/* Full Name */}
+      
         <div className="mb-4">
           <label className="block font-medium text-gray-700 mb-1">Full Name</label>
           <input
@@ -61,7 +61,7 @@ export default function Register() {
           <p className="text-red-500 text-sm">{errors.fullName?.message}</p>
         </div>
 
-        {/* Email */}
+     
         <div className="mb-4">
           <label className="block font-medium text-gray-700 mb-1">Email</label>
           <input
@@ -72,7 +72,7 @@ export default function Register() {
           <p className="text-red-500 text-sm">{errors.email?.message}</p>
         </div>
 
-        {/* Mobile Number */}
+      
         <div className="mb-4">
           <label className="block font-medium text-gray-700 mb-1">Mobile Number</label>
           <div className="flex border rounded-lg overflow-hidden">
@@ -87,7 +87,7 @@ export default function Register() {
           <p className="text-red-500 text-sm">{errors.mobileNumber?.message}</p>
         </div>
 
-        {/* Role Selection */}
+     
         <div className="mb-4">
           <label className="block font-medium text-gray-700 mb-1">Current Status</label>
           <div className="flex gap-4">
@@ -103,7 +103,7 @@ export default function Register() {
           <p className="text-red-500 text-sm">{errors.role?.message}</p>
         </div>
 
-        {/* Password */}
+       
         <div className="mb-4">
           <label className="block font-medium text-gray-700 mb-1">Password</label>
           <input
@@ -115,7 +115,7 @@ export default function Register() {
           <p className="text-red-500 text-sm">{errors.password?.message}</p>
         </div>
 
-        {/* Save Button */}
+
         <button
           type="submit"
           className="bg-blue-900 text-white w-full py-2 rounded-lg hover:bg-blue-800 transition"
@@ -123,10 +123,10 @@ export default function Register() {
           Save
         </button>
 
-        {/* Login Link */}
+      
         <p className="text-center text-sm mt-4">
           Already have an account?{" "}
-          <Link to="/login" className="text-blue-500 font-medium hover:underline">
+          <Link to="/" className="text-blue-500 font-medium hover:underline">
             Login Now
           </Link>
         </p>
