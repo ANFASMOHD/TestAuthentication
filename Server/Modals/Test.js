@@ -5,6 +5,7 @@ const testResultSchema = new mongoose.Schema({
   score: Number,
   answers: [{ questionId: String,
      selectedAnswer: String }]
-});
+
+   },{ timestamps: true });
 
 module.exports = mongoose.model("TestResult", testResultSchema);

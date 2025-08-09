@@ -7,7 +7,7 @@ function WelcomePage() {
   const navigate = useNavigate();
 
   const handleStart = () => {
-    navigate("/register"); // Change route if needed
+    navigate("/test"); // Change route if needed
   };
 
   return (

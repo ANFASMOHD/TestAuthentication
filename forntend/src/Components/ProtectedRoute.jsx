@@ -7,7 +7,7 @@ export default function ProtectedRoute({ children, allowedRoles }) {
 
   // ✅ If no token, send to login
   if (!token) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
 
   // ✅ If allowedRoles is provided and user exists, check role
