@@ -41,13 +41,13 @@ export default function Login() {
         onSubmit={handleSubmit(onSubmit)}
         className="bg-white shadow-md rounded-lg p-8 w-full max-w-sm"
       >
-        {/* Title */}
+      
         <h2 className="text-center text-2xl font-bold mb-6">
           Login
           <span className="block w-12 h-1 bg-yellow-500 mx-auto mt-1 rounded"></span>
         </h2>
 
-        {/* Mobile Number */}
+      
         <div className="mb-4">
           <label className="block text-gray-700 font-medium mb-1">
             Mobile Number
@@ -66,7 +66,7 @@ export default function Login() {
           <p className="text-red-500 text-sm">{errors.mobileNumber?.message}</p>
         </div>
 
-        {/* Password */}
+ 
         <div className="mb-4">
           <label className="block text-gray-700 font-medium mb-1">
             Password
@@ -80,7 +80,7 @@ export default function Login() {
           <p className="text-red-500 text-sm">{errors.password?.message}</p>
         </div>
 
-        {/* Button */}
+     
         <button
           type="submit"
           className="bg-blue-900 text-white w-full py-2 rounded-lg hover:bg-blue-800 transition"
@@ -88,7 +88,7 @@ export default function Login() {
           Login
         </button>
 
-        {/* Register Link */}
+      
         <p className="text-center text-sm mt-4">
           Don’t have an account?{" "}
           <Link to="/register" className="text-blue-500 font-medium hover:underline">
