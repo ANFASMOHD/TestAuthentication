@@ -4,6 +4,6 @@ const protect = require("../MiddleWare/authmiddleware");
 
 const router = express.Router();
 
-router.post("/", protect, submitFeedback);
+router.post("/feed", protect, submitFeedback);
 
 module.exports = router;

@@ -15,11 +15,20 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<WelcomePage/>} />
-        <Route path="/login" element={<Login />} />
+     
+        <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
         {/* Protected routes */}
+
+           <Route
+          path="/welcome"
+          element={
+            <ProtectedRoute>
+           <WelcomePage/>
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/test"
           element={

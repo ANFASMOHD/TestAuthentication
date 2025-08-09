@@ -15,14 +15,32 @@ const submitTest = async (req, res) => {
     for (let ans of answers) {
       const q = await Qustion.findById(ans.questionId);
       if (q.correctAnswer === ans.selectedAnswer) {
-        score += 5;
+        score += 1;
       }
     }
-    await TestResult.create({ userId: req.user, score, answers });
-    res.json({ score });
+    // Check if test result already exists for user
+    const existingTest = await TestResult.findOne({ userId: req.user });
+    if (existingTest) {
+      existingTest.score = score;
+      existingTest.answers = answers;
+      await existingTest.save();
+      res.json({ score, updated: true });
+    } else {
+      await TestResult.create({ userId: req.user, score, answers });
+      res.json({ score, created: true });
+    }
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-module.exports = { getQuestions, submitTest };
+const getTestSummary = async (req, res) => {
+  try {
+    const totalQuestions = await Qustion.countDocuments();
+    res.json({ totalQuestions });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+module.exports = { getQuestions, submitTest, getTestSummary };
