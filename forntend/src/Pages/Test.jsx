@@ -82,9 +82,9 @@ export default function Test() {
     <>
       <Navbar />
       <div className="flex flex-col lg:flex-row min-h-screen bg-gray-50">
-        {/* Sidebar / Top Navigation */}
+  
         <div className="lg:w-1/5 bg-white border-b lg:border-b-0 lg:border-r p-4">
-          {/* Number grid - turns into horizontal scroll on mobile */}
+    
           <div className="flex lg:grid lg:grid-cols-3 gap-2 overflow-x-auto pb-2">
             {questions.map((q, index) => (
               <button
@@ -114,9 +114,9 @@ export default function Test() {
           </div>
         </div>
 
-        {/* Main Content */}
+     
         <div className="flex-1 p-4 lg:p-6">
-          {/* Progress Bar */}
+       
           <div className="w-full h-2 bg-gray-200 rounded-full mb-4">
             <div
               className="h-2 bg-blue-500 rounded-full transition-all duration-300"
@@ -173,7 +173,7 @@ export default function Test() {
             </div>
           )}
 
-          {/* Navigation */}
+ 
           <div className="flex flex-col sm:flex-row justify-between mt-6 gap-3">
             <button
               onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
