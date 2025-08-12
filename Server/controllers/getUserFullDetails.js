@@ -2,10 +2,10 @@ const User = require("../Modals/User");
 const TestResult = require("../Modals/Test");
 const Feedback = require("../Modals/Feedback");
 
-// Get all students ++++++++++ test mark and feedback
+// Get all students --- test mark and feedback
 const getAllStudentsWithDetails = async (req, res) => {
   try {
-    // Find all users with role========= student
+    // find all users with role ==== student
   const students = await User.find({ role: "student" }).select("fullName email");
 
     // For each student ================= test result feedback
@@ -26,7 +26,7 @@ const getAllStudentsWithDetails = async (req, res) => {
     );
  console.log(studentDetails);
  
-    // Format feedbacks better
+    // format feedbacks 
     const formattedDetails = studentDetails.map(student => ({
       ...student,
       feedbacks: student.feedbacks
