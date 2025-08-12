@@ -34,13 +34,13 @@ const registerUser = async (req, res) => {
       role: role || "student",
     };
 
-    // Generate enrollment ID for both students and employees
+    // Generate enrollment --- students and employees
     userData.enrollmentId = `ENR${new Date().getFullYear()}${Math.floor(
       1000 + Math.random() * 9000
     )}`;
-    // Do NOT set enrollmentId for employees
 
-    // Create user
+
+    // create user
     const user = await User.create(userData);
 
     res.status(201).json({
