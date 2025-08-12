@@ -7,7 +7,7 @@ dotenv.config();
 
 mongoose.connect(process.env.MONGO_URI)
   .then(async () => {
-    console.log("✅ MongoDB connected for seeding");
+    console.log(" MongoDB connected for seeding");
 
     const questions = [
       {
