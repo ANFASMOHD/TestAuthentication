@@ -18,7 +18,7 @@ const submitTest = async (req, res) => {
         score += 1;
       }
     }
-    // Check if test result already exists for user
+    // check if test result already exists for user
     const existingTest = await TestResult.findOne({ userId: req.user });
     if (existingTest) {
       existingTest.score = score;
