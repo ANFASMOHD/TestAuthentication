@@ -14,7 +14,7 @@ function WelcomePage() {
 <>
 <Navbar/>
       <div className="flex flex-col items-center justify-center min-h-screen bg-white px-6 text-center">
-        {/* Title */}
+     
         <h1 className="text-4xl font-bold mb-2">
           Welcome to{" "}
           <span className="text-black">TSEEP</span>{" "}
@@ -24,10 +24,10 @@ function WelcomePage() {
           Unlock your potential with <span className="font-semibold">AI inspired tool</span>
         </p>
   
-        {/* Divider */}
+     
         <hr className="w-full max-w-2xl border-gray-300 mb-6" />
   
-        {/* Checkbox */}
+      
         <div className="flex items-center justify-center gap-2 mb-6">
           <input
             type="checkbox"
@@ -43,7 +43,7 @@ function WelcomePage() {
           </label>
         </div>
   
-        {/* Button */}
+     
         <button
           onClick={handleStart}
           disabled={!isChecked}
